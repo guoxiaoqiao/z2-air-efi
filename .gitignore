@@ -1,0 +1,12 @@
+
+EFI/\.DS_Store
+
+EFI/CLOVER/\.DS_Store
+
+EFI/CLOVER/ACPI/\.DS_Store
+
+EFI/CLOVER/kexts/\.DS_Store
+
+EFI/CLOVER/kexts/Other/\.DS_Store
+
+EFI/CLOVER/themes/\.DS_Store
