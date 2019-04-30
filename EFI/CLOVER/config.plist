@@ -106,6 +106,8 @@
 				<key>FixWAK</key>
 				<false/>
 			</dict>
+			<key>Name</key>
+			<string>DSDT.aml</string>
 			<key>Patches</key>
 			<array>
 				<dict>
@@ -393,13 +395,15 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 darkwake=8 nv_disable=1</string>
+		<string>dart=0 darkwake=8 nv_disable=1 -cdfon</string>
 		<key>DefaultVolume</key>
 		<string>MAC</string>
+		<key>HibernationFixup</key>
+		<true/>
 		<key>Log</key>
 		<false/>
 		<key>NeverHibernate</key>
-		<false/>
+		<true/>
 		<key>NoEarlyProgress</key>
 		<true/>
 		<key>Secure</key>
@@ -408,6 +412,11 @@
 		<integer>5</integer>
 		<key>XMPDetection</key>
 		<string>Yes</string>
+	</dict>
+	<key>BootGraphics</key>
+	<dict>
+		<key>EFILoginHiDPI</key>
+		<integer>1</integer>
 	</dict>
 	<key>CPU</key>
 	<dict>
@@ -430,6 +439,64 @@
 			<key>#Kaby Lake-Comment</key>
 			<string>To avoid automatic Clover fake device-id (Skylake) injection</string>
 		</dict>
+		<key>Properties</key>
+		<dict>
+			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
+			<dict>
+				<key>AAPL,ig-platform-id</key>
+				<data>
+				AACbPg==
+				</data>
+				<key>device-id</key>
+				<data>
+				mz4AAA==
+				</data>
+				<key>enable-hdmi20</key>
+				<data>
+				AQAAAA==
+				</data>
+				<key>framebuffer-con1-enable</key>
+				<data>
+				AQAAAA==
+				</data>
+				<key>framebuffer-con1-pipe</key>
+				<data>
+				EgAAAA==
+				</data>
+				<key>framebuffer-con2-enable</key>
+				<data>
+				AQAAAA==
+				</data>
+				<key>framebuffer-con2-index</key>
+				<data>
+				/////w==
+				</data>
+				<key>framebuffer-cursormem</key>
+				<data>
+				AAAAAw==
+				</data>
+				<key>framebuffer-fbmem</key>
+				<data>
+				AAAAAw==
+				</data>
+				<key>framebuffer-patch-enable</key>
+				<data>
+				AQAAAA==
+				</data>
+				<key>framebuffer-portcount</key>
+				<data>
+				AgAAAA==
+				</data>
+				<key>framebuffer-unifiedmem</key>
+				<data>
+				AADw/w==
+				</data>
+			</dict>
+		</dict>
+		<key>SetIntelBacklight</key>
+		<false/>
+		<key>SetIntelMaxBacklight</key>
+		<false/>
 		<key>USB</key>
 		<dict>
 			<key>AddClockID</key>
@@ -446,6 +513,8 @@
 	<dict>
 		<key>#ScreenResolution</key>
 		<string>1920x1080</string>
+		<key>ConsoleMode</key>
+		<string>Mix</string>
 		<key>Custom</key>
 		<dict>
 			<key>Entries</key>
@@ -485,6 +554,8 @@
 			<key>Speed</key>
 			<integer>8</integer>
 		</dict>
+		<key>PlayAsync</key>
+		<true/>
 		<key>Scan</key>
 		<dict>
 			<key>Entries</key>
@@ -496,12 +567,10 @@
 			<key>Tool</key>
 			<true/>
 		</dict>
-		<key>ScreenResolution</key>
-		<string>1920x1080</string>
 		<key>ShowOptimus</key>
 		<true/>
 		<key>Theme</key>
-		<string>Clovy</string>
+		<string>CCC</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
@@ -515,14 +584,12 @@
 			<key>ATI</key>
 			<false/>
 			<key>Intel</key>
-			<true/>
+			<false/>
 			<key>NVidia</key>
 			<false/>
 		</dict>
 		<key>LoadVBios</key>
 		<false/>
-		<key>ig-platform-id</key>
-		<string>0x3E9B0000</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
@@ -741,7 +808,7 @@
 				<key>Comment</key>
 				<string>Enable TRIM for SSD</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				AEFQUExFIFNTRAA=
@@ -797,7 +864,7 @@
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>C02833303GUJP4F8C</string>
+		<string>C02852270CDJP4FCB</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -829,16 +896,16 @@
 		<key>ProductName-Comment</key>
 		<string>Using Haswell MacBookAir6,2 until Clover has support for KabyLake identifiers</string>
 		<key>SerialNumber</key>
-		<string>C02X74YGKGYG</string>
+		<string>C02XW0Q3KGYG</string>
 		<key>SmUUID</key>
-		<string>F51484DA-9F08-40CB-868E-CE56EBFBDDE5</string>
+		<string>D0FA6EF0-4293-4651-8E0D-E96EB67D8C0B</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
 		<key>#BacklightLevel</key>
-		<integer>0</integer>
+		<integer>0xFFFF</integer>
 		<key>CustomUUID</key>
 		<string>4604CF43-22FB-4C02-9DD7-D15BF555FC4F</string>
 		<key>InjectKexts</key>
