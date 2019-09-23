@@ -200,6 +200,7 @@ private:
 	static constexpr uint32_t ConnectorLessKabyLakePlatformId2 {0x59120003};
 	static constexpr uint32_t ConnectorLessCoffeeLakePlatformId1 {0x3E920003};
 	static constexpr uint32_t ConnectorLessCoffeeLakePlatformId2 {0x3E910003};
+	static constexpr uint32_t ConnectorLessCoffeeLakePlatformId3 {0x3E980003};
 
 public:
 	/**
@@ -266,7 +267,7 @@ public:
 	 *
 	 *  @param d  device list
 	 */
-	EXPORT static void deleter(DeviceInfo *d);
+	EXPORT static void deleter(DeviceInfo *d NONNULL);
 };
 
 #endif /* kern_devinfo_h */
